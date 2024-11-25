@@ -2,7 +2,6 @@
 
 <div class="container">
 
-    
     <h3>Adicionar Usuário</h3>
     <hr>
     
@@ -15,11 +14,13 @@
     <form method="POST" action="/users/save">
         <div class="mb-3">
           <label for="name" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="name" name="name" value="<%= old('username', 'blah1') %>" autofocus>
+          <!-- Limpa os campos, usa old.name se houver erro -->
+          <input type="text" class="form-control" id="name" name="name" value="<%= old && old.name ? old.name : '' %>" autofocus>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>
-          <input class="form-control" id="email" name="email" value="<%= old('email', 'blah2') %>">
+          <!-- Limpa os campos, usa old.email se houver erro -->
+          <input class="form-control" id="email" name="email" value="<%= old && old.email ? old.email : '' %>">
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Senha</label>
@@ -32,8 +33,7 @@
         <button type="submit" class="btn btn-primary">Salvar</button>
         <a href="/users" class="btn btn-secondary">Cancelar</a>
     </form>
-    
+
 </div>
 
-<%- include("includes/footer"); %>
 <%- include("includes/footer"); %>
