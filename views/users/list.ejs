@@ -35,12 +35,12 @@
                 <td><%= user.email %></td>
                 <td><%= user.active ? "Sim" : "Não" %></td>
                 <td>
-                    <form action="/users/update-status/<%= user.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Mudar status da tarefa?')">
+                    <form action="/users/update-status/<%= user.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Mudar status do usuario?')">
                         <input type="hidden" name="done" value="<%= user.done %>">
                         <button type="submit" class="btn btn-warning">Status</button>
                     </form>
                     <a type="button" class="btn btn-success" href="/users/edit/<%= user.id %>">Editar</a>
-                    <form action="/users/remove/<%= user.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Tem certeza que deseja excluir essa tarefa?')">
+                    <form action="/users/remove/<%= user.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Tem certeza que deseja excluir esse usuarioa?')">
                         <button type="submit" class="btn btn-danger">Excluir</button>
                     </form>
                 </td>
