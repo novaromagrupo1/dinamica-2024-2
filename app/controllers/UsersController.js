@@ -19,30 +19,39 @@ function UserController() {
   }
 
   async function save(req, res) {
-    const body = req.body;
+    const { name, email, password, confirm_password } = req.body;
 
-    if (body.password != body.confirm_password) {
-      res.render('users/create', {
+    // Validação de senha
+    if (password !== confirm_password) {
+      return res.render('users/create', {
+        old: req.body,  // Para manter os campos preenchidos
         error: {
-          message: 'Os campos senha e confirmar senha são diferentes.'
+          message: 'As senhas não coincidem.',
+          field: 'password'
         }
       });
-      return;
     }
 
-    const hashed_password = await bcrypt.hash(req.body.password, 10);
-
-    const user = {
-      name: req.body.name,
-      email: req.body.email,
-      password: hashed_password,
-    };
-
     try {
-      await User.create(user);
+      // Hash da senha
+      const hashed_password = await bcrypt.hash(password, 10);
+
+      const user = {
+        name,
+        email,
+        password: hashed_password,
+      };
+
+      await User.create(user);  // Cria o usuário
       res.redirect('/users');
     } catch (error) {
-      console.log(error);      
+      console.log(error);
+      res.render('users/create', {
+        old: req.body,  // Para manter os campos preenchidos
+        error: {
+          message: 'Ocorreu um erro ao salvar o usuário.',
+        },
+      });
     }
   }
 
