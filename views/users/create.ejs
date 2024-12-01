@@ -14,20 +14,18 @@
     <form method="POST" action="/users/save">
         <div class="mb-3">
           <label for="name" class="form-label">Nome</label>
-          <!-- Limpa os campos, usa old.name se houver erro -->
-          <input type="text" class="form-control" id="name" name="name" value="<%= old && old.name ? old.name : '' %>" autofocus>
+          <input type="text" class="form-control" id="name" name="name" value="<%= old.name %>" autofocus>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>
-          <!-- Limpa os campos, usa old.email se houver erro -->
-          <input class="form-control" id="email" name="email" value="<%= old && old.email ? old.email : '' %>">
+          <input class="form-control" id="email" name="email" value="<%= old.email %>">
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Senha</label>
           <input type="password" class="form-control" id="password" name="password">
         </div>
         <div class="mb-3">
-          <label for="password_confirmation" class="form-label">Confirmar Senha</label>
+          <label for="password_confirmation" class="form-label" >Confirmar Senha</label>
           <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
         </div>
         <button type="submit" class="btn btn-primary" style="background-color: #20c997; border-color: #20c997">Salvar</button>
