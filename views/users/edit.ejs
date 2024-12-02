@@ -16,11 +16,11 @@
             <label for="email" class="form-label">E-mail</label>
             <input type="text" class="form-control" id="email" name="email" value="<%= user.email %>">
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="concluido" name="done" value="1" <%= user.active == 1 ? 'checked' : '' %>>
+        <div class="mb-3 form-check"><input type="hidden" name="done" value="0">
+            <input type="checkbox" class="form-check-input" id="concluido" name="active" value="1" <%= user.active == 1  ? 'checked' : '' %>>
           <label class="form-check-label" for="concluido">Ativo</label>
         </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #20c997; border-color: #20c997">Salvar</button>
         <a href="/users" class="btn btn-secondary">Cancelar</a>
       </form>
     

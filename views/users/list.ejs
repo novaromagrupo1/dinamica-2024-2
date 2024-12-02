@@ -17,7 +17,7 @@
     <h3>Lista de Usuários</h3>
 
     <div>
-        <a type="button" class="btn btn-primary" href="/users/create/">Adicionar Usuário</a>
+        <a type="button" class="btn btn-primary" href="/users/create/" style="background-color: #20c997; border-color: #20c997">Adicionar Usuário</a>
     </div>
     <table class="table">
         <thead>
@@ -40,7 +40,7 @@
                         <button type="submit" class="btn btn-warning">Status</button>
                     </form>
                     <a type="button" class="btn btn-success" href="/users/edit/<%= user.id %>">Editar</a>
-                    <form action="/users/remove/<%= user.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Tem certeza que deseja excluir esse usuarioa?')">
+                    <form action="/users/remove/<%= user.id %>" method="POST" style="display: inline-block" onsubmit="return confirmar('Tem certeza que deseja excluir esse usuario?')">
                         <button type="submit" class="btn btn-danger">Excluir</button>
                     </form>
                 </td>
