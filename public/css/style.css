@@ -36,13 +36,80 @@
     padding: 50px;
 }
 
-.footer {
-    height: 100px;
-    background-color: silver;
+.menu-footer {
+    height: 195px;
+    background-color: #3e606e;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white;
+    align-items: center;
+}
+
+.img-footer >img {
+    height: 100px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.img-footer {
+    justify-content: center;
+    width: 300px;
+    object-fit: none;
 }
 
 .concluido td:not(:last-child) {
     text-decoration-line: line-through;
     text-decoration-thickness: 2px;
+}
+
+.logo {
+    display: flex; /* Define um layout flex */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 550px; /* Define a altura do contêiner para ocupar a tela inteira */
+}
+
+.txt-logo {
+    position: absolute; /* Posição absoluta para a área central */
+    top: 54%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centralização perfeita */
+    text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.logo >img {
+    width: 200px; /* Define a largura da logo */
+    height: 200px; /* Define a altura da logo */
+    border-radius: 50%; /* Arredonda a logo */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner */
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-element {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.email {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-element p {
+    text-align: center;
+}
+
+.btn-social {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
